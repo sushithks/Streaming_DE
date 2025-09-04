@@ -8,7 +8,7 @@ def sentiment_analysis(comment) -> str:
     if comment:
         openai.api_key = config['openai']['api_key']
         completion = openai.ChatCompletion.create(
-            model='gpt-3.5',
+            model='gpt-3.5-turbo',
             messages=[
                 {
                     "role": "system",
