@@ -44,6 +44,8 @@ def start_streaming(spark):
                 StructField("review_id", StringType()),
                 StructField("user_id", StringType()),
                 StructField("business_id", StringType()),
+                StructField("stars", FloatType()),
+                StructField("date", StringType()),
                 StructField("text", StringType())
             ])
 
