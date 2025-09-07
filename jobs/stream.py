@@ -7,6 +7,7 @@ def send_data_over_socket(file_path, host='spark-master', port=9999, chunk_size=
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((host, port))
     s.listen(1)
+    print(f"Listening for connections on {host}:{port}")
 
     last_sent_index = 0
     while True:
@@ -14,6 +15,7 @@ def send_data_over_socket(file_path, host='spark-master', port=9999, chunk_size=
         print(f"Connection from {addr}")
         try:
             with open(file_path, 'r') as file:
+                # skip the lines that were already sent
                 for _ in range(last_sent_index):
                     next(file)
 
@@ -28,6 +30,7 @@ def send_data_over_socket(file_path, host='spark-master', port=9999, chunk_size=
                             conn.send(serialize_data + b'\n')
                             time.sleep(5)
                             last_sent_index += 1
+
                         records = []
         except (BrokenPipeError, ConnectionResetError):
             print("Client disconnected.")
