@@ -1,5 +1,6 @@
 from time import sleep
 
+from pyspark.sql import SparkSession
 import openai
 from pyspark.sql.functions import from_json, col, when, udf
 from pyspark.sql.types import StructType, StructField, StringType, FloatType
@@ -79,3 +80,8 @@ def start_streaming(spark):
         except Exception as e:
             print(f'Exception encountered: {e}. Retrying in 10 seconds')
             sleep(10)
+
+if __name__ == "__main__":
+    spark_conn = SparkSession.builder.appName("SocketStreamConsumer").getOrCreate()
+
+    start_streaming(spark_conn)
