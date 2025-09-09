@@ -3,6 +3,9 @@ import socket
 import time
 import pandas as pd
 
+def handle_date(obj):
+    return "temp"
+
 def send_data_over_socket(file_path, host='spark-master', port=9999, chunk_size=2):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((host, port))
@@ -26,7 +29,7 @@ def send_data_over_socket(file_path, host='spark-master', port=9999, chunk_size=
                         chunk = pd.DataFrame(records)
                         print(chunk)
                         for record in chunk.to_dict(orient='records'):
-                            serialize_data = json.dumps(record).encode('utf-8')
+                            serialize_data = json.dumps(record, default=handle_date).encode('utf-8')
                             conn.send(serialize_data + b'\n')
                             time.sleep(5)
                             last_sent_index += 1
