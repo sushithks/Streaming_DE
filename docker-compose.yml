@@ -9,13 +9,14 @@ services:
       dockerfile: Dockerfile.spark
     command: bin/spark-class org.apache.spark.deploy.master.Master
     volumes:
+      -  ./config:/opt/bitnami/spark/config
       - ./jobs:/opt/bitnami/spark/jobs
       - ./requirements.txt:/requirements.txt
     ports:
       - "9090:8080"
       - "7077:7077"
     networks:
-      - code-with-yu
+      - sushith
 
   spark-worker: &worker
     container_name: spark-worker
@@ -25,6 +26,7 @@ services:
       dockerfile: Dockerfile.spark
     command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     volumes:
+      - ./config:/opt/bitnami/spark/config
       - ./jobs:/opt/bitnami/spark/jobs
       - ./requirements.txt:/requirements.txt
     depends_on:
@@ -35,7 +37,7 @@ services:
       SPARK_WORKER_MEMORY: 1g
       SPARK_MASTER_URL: spark://spark-master:7077
     networks:
-      - code-with-yu
+      - sushith
 
 networks:
-  code-with-yu:
+  sushith:
