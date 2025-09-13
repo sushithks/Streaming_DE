@@ -1,0 +1,14 @@
+config = {
+    "openai": {
+        "api_key": "OPENAI_KEY"
+    },
+    "kafka": {
+        "sasl.username": "KAFKA_CLUSTER_API_KEY",
+        "sasl.password": "KAFKA_CLUSTER_API_SECRET",
+        'sasl.mechanisms': 'PLAIN',
+        'session.timeout.ms': 50000
+    },
+    "schema_registry": {
+        "url": "SCHEMA_REGISTRY_URL",
+    }
+}
