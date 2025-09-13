@@ -10,5 +10,7 @@ config = {
     },
     "schema_registry": {
         "url": "SCHEMA_REGISTRY_URL",
+        "basic.auth.user.info": "SR_API_KEY:SR_API_SECRET"
+
     }
 }
