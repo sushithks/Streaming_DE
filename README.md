@@ -8,25 +8,25 @@ The system integrates data ingestion, orchestration, streaming, processing, and 
 
 # Components
 
-API – Entry point for ingesting raw data into the pipeline.
+- API – Entry point for ingesting raw data into the pipeline.
 
-Apache Airflow – Orchestrates workflows and manages scheduling.
+- Apache Airflow – Orchestrates workflows and manages scheduling.
 
-PostgreSQL – Stores metadata and transactional data.
+- PostgreSQL – Stores metadata and transactional data.
 
-Apache Kafka – Core event streaming platform enabling high-throughput, low-latency messaging.
+- Apache Kafka – Core event streaming platform enabling high-throughput, low-latency messaging.
 
-ZooKeeper – Coordinates and manages Kafka brokers.
+- ZooKeeper – Coordinates and manages Kafka brokers.
 
-Control Center – Provides monitoring and management of Kafka clusters.
+- Control Center – Provides monitoring and management of Kafka clusters.
 
-Schema Registry – Manages schemas for Kafka topics, ensuring data compatibility.
+- Schema Registry – Manages schemas for Kafka topics, ensuring data compatibility.
 
-Apache Spark (Master & Workers) – Processes streaming data in parallel for analytics and transformations.
+- Apache Spark (Master & Workers) – Processes streaming data in parallel for analytics and transformations.
 
-Cassandra – Highly scalable NoSQL database for storing processed results.
+- Cassandra – Highly scalable NoSQL database for storing processed results.
 
-Docker – Containerization to ensure consistency, scalability, and portability.
+- Docker – Containerization to ensure consistency, scalability, and portability.
 
 
 
