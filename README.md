@@ -1,1 +1,6 @@
-# The project demonstrates how to design and implement a full-scale data engineering pipeline, leveraging TCP/IP Socket for ingestion, Apache Spark for processing, OpenAI LLM for sentiment analysis, Kafka for event streaming, and Elasticsearch for indexing and search. It offers a step-by-step journey from raw data capture to real-time insights
+# Overview
+
+This project demonstrates a modern real-time data processing pipeline built with open-source technologies. The architecture is designed for scalability, fault tolerance, and high throughput, making it suitable for handling large volumes of streaming data.
+
+The system integrates data ingestion, orchestration, streaming, processing, and storage, providing a robust foundation for advanced analytics and machine learning use cases.
+
