@@ -42,3 +42,11 @@ The system integrates data ingestion, orchestration, streaming, processing, and 
 - Apache Spark
 
 - Cassandra
+
+
+# 📊 Use Cases
+
+- Real-time analytics and dashboards.
+- Log and event data processing.
+- Stream-based ETL pipelines.
+- Machine learning model streaming inference.
